@@ -1,1 +1,1 @@
-# Ionic-TaskList
+# Ionic-Angular-TaskList
