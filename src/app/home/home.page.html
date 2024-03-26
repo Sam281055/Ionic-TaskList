@@ -1,20 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      TaskList
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+
+
+<ion-content [fullscreen]="true">
+
+  <!-- Buscador -->
+    <ion-input label="Nueva Tarea" label-placement="floating" fill="solid" [(ngModel)]="tarea" (keydown.enter)="addTask()"></ion-input>
+    <ion-button (click)="addTask()" expand="block" fill="clear" shape="round">
+      Añadir Tarea
+    </ion-button>
+
+    <h1>Pendientes</h1>
+
+    <!-- Lista -->
+  <ion-list lines="full">
+    <ion-item *ngFor="let item of taks; let i = index">
+      <ion-label>{{item}}</ion-label>
+      <ion-checkbox labelPlacement="start" (click)="delTask(i)"></ion-checkbox>
+    </ion-item>
+  </ion-list>
 </ion-content>
